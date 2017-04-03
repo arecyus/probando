@@ -32,14 +32,13 @@ app.get("/",(req,res)=>{
     // res.send("<h1>Hola Express</h1>");
    res.render("home.hbs",{
        pageTitle:"Home Page",
-       
        welcome: "Bienvenido"
    });
 });
 
 app.get("/about",(req,res)=>{
     res.render("about.hbs",{
-        pageTitle:"About Page",
+        pageTitle:"About Page"
        
     });
 });
@@ -49,6 +48,13 @@ app.get("/bad",(req,res)=>{
         errorMessage:"Something went wrong"
     });
 });
+
+app.get("/portfolio",(req,res)=>{
+    res.render("portfolio.hbs",{
+        pageTitle: "Portfolio Page"
+    });
+})
+
 app.listen(port,()=>{
     console.log("Server is up on port "+port);
 });
